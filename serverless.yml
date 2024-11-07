@@ -11,7 +11,7 @@ provider:
 
 functions:
   api:
-    handler: app.handler # Specifies the handler in app.js
+    handler: handler.handler # Specifies the handler in app.js
     events:
       - httpApi:
           path: /api/people

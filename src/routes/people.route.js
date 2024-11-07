@@ -1,9 +1,11 @@
 import express from "express";
-import { getPeople, getPerson } from "../controllers/people.controller.js";
+import { getPeople, getPerson, createPerson } from "../controllers/people.controller.js";
 import { parserQueryString } from "../middlewares/parserQueryString.js";
+import { validateId } from "../middlewares/validateId.js";
+import { validatePerson } from "../middlewares/validatePerson.js";
 
 export const router = express.Router();
 
 router.get('/', parserQueryString, getPeople);
-router.get('/:id', getPerson);
-router.post('/', () => { return "hola" });
+router.get('/:id', validateId, getPerson);
+router.post('/', validatePerson, createPerson);

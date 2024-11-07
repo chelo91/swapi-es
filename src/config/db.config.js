@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-let sequelizeInstance = null; // Variable para almacenar la instancia de Sequelize
+let sequelizeInstance = null;
 
 function createSequelizeInstance() {
     const host = process.env.DB_HOST;
@@ -18,14 +18,14 @@ function createSequelizeInstance() {
         throw new Error('Faltan variables de entorno para la conexión a la base de datos.');
     }
 
-    return new Sequelize(database, user, password,{
+    return new Sequelize(database, user, password, {
         host: host,
         dialect: type,
         port: port,
         define: {
             timestamps: false
         },
-        logging: false, // Desactiva los logs para optimización
+        logging: false,
     });
 }
 
@@ -37,6 +37,16 @@ export function getSequelizeInstance() {
         console.log("Instancia de Sequelize reutilizada.");
     }
     return sequelizeInstance;
+}
+
+export async function syncModels() {
+    const sequelize = getSequelizeInstance();
+    try {
+        await sequelize.sync();
+        console.log("Modelos sincronizados con la base de datos.");
+    } catch (error) {
+        console.error("Error al sincronizar los modelos:", error);
+    }
 }
 
 // Prueba la conexión cuando se llame por primera vez
