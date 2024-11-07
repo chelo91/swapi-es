@@ -11,6 +11,17 @@ provider:
 
 functions:
   api:
-    handler: handler.handler
+    handler: app.handler # Specifies the handler in app.js
     events:
-      - httpApi: "*"
+      - httpApi:
+          path: /api/people
+          method: get
+      - httpApi:
+          path: /api/people/{id}
+          method: get
+      - httpApi:
+          path: /api/people
+          method: post
+
+plugins:
+  - serverless-offline
