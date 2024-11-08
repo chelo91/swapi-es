@@ -2,11 +2,7 @@ import { Model, DataTypes } from 'sequelize';
 import { getSequelizeInstance } from '../config/db.config.js';
 const sequelize = getSequelizeInstance();
 
-export default class Person extends Model {
-
-    static initModel() { }
-
-}
+export default class Person extends Model { }
 
 Person.init({
     id: {
@@ -14,11 +10,11 @@ Person.init({
         primaryKey: true,
         autoIncrement: true
     },
-    birthYear: DataTypes.STRING,
-    eyeColor: DataTypes.STRING,
+    birth_year: DataTypes.STRING,
+    eye_color: DataTypes.STRING,
     films: DataTypes.JSON,
     gender: DataTypes.STRING,
-    hairColor: DataTypes.STRING,
+    hair_color: DataTypes.STRING,
     height: DataTypes.INTEGER,
     homeworld: DataTypes.STRING,
     mass: DataTypes.INTEGER,
@@ -27,7 +23,7 @@ Person.init({
         unique: true,
         allowNull: false,
     },
-    skinColor: DataTypes.STRING,
+    skin_color: DataTypes.STRING,
     created: DataTypes.DATE,
     edited: DataTypes.DATE,
     species: DataTypes.JSON,
@@ -36,7 +32,9 @@ Person.init({
     vehicles: DataTypes.JSON,
 }, {
     sequelize, // Conexión a la base de datos
-    modelName: 'person',
-    tableName: 'person',
+    modelName: 'people',
+    tableName: 'people',
     timestamps: false,
-});
+}
+
+);

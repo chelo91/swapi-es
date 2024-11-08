@@ -26,7 +26,7 @@ export const validatePerson = (req, res, next) => {
     // Validaciones para cada campo
     if (typeof año_nacimiento !== 'string') errors.push('año_nacimiento debe ser una cadena.');
     if (typeof color_ojos !== 'string') errors.push('color_ojos debe ser una cadena.');
-    if (!Array.isArray(películas) || !películas.every(Number.isInteger)) errors.push('películas debe ser un arreglo de enteros.');
+    if (!Array.isArray(películas) || !películas.every(item => typeof item === 'string')) errors.push('películas debe ser un arreglo de cadenas.');
     if (typeof género !== 'string') errors.push('género debe ser una cadena.');
     if (typeof color_cabello !== 'string') errors.push('color_cabello debe ser una cadena.');
     if (typeof altura !== 'number') errors.push('altura debe ser un número.');
@@ -36,10 +36,10 @@ export const validatePerson = (req, res, next) => {
     if (typeof color_piel !== 'string') errors.push('color_piel debe ser una cadena.');
     if (isNaN(Date.parse(creado))) errors.push('creado debe ser una fecha válida.');
     if (isNaN(Date.parse(editado))) errors.push('editado debe ser una fecha válida.');
-    if (!Array.isArray(especies) || !especies.every(Number.isInteger)) errors.push('especies debe ser un arreglo de enteros.');
-    if (!Array.isArray(naves_estelares) || !naves_estelares.every(Number.isInteger)) errors.push('naves_estelares debe ser un arreglo de enteros.');
+    if (!Array.isArray(especies) || !especies.every(item => typeof item === 'string')) errors.push('especies debe ser un arreglo de cadenas.');
+    if (!Array.isArray(naves_estelares) || !naves_estelares.every(item => typeof item === 'string')) errors.push('naves_estelares debe ser un arreglo de cadenas.');
     if (typeof url !== 'string') errors.push('url debe ser una cadena.');
-    if (!Array.isArray(vehículos) || !vehículos.every(Number.isInteger)) errors.push('vehículos debe ser un arreglo de enteros.');
+    if (!Array.isArray(vehículos) || !vehículos.every(item => typeof item === 'string')) errors.push('vehículos debe ser un arreglo de cadenas.');
 
     // Enviar errores si los hay
     if (errors.length > 0) {

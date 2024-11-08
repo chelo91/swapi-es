@@ -1,9 +1,6 @@
 {
   "name": "swapi-es",
   "type": "module",
-  "scripts": {
-    "dev": "nodemon handler.js"
-  },
   "version": "1.0.0",
   "description": "",
   "dependencies": {
@@ -13,9 +10,11 @@
     "query-string": "^9.1.1",
     "sequelize": "^6.37.5",
     "serverless-http": "^3.2.0",
+    "swagger-ui-express": "^5.0.1",
     "swapi-node": "^0.7.0"
   },
   "devDependencies": {
-    "serverless-offline": "^14.3.4"
+    "serverless-offline": "^14.3.4",
+    "swagger-autogen": "^2.23.7"
   }
 }

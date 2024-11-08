@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "9299a4fe-6b47-47fb-b60a-70c601ecf044",
+		"name": "swapi-es",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30199050"
+	},
+	"item": [
+		{
+			"name": "Get People",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/people?page=9",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"people"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"año_nacimiento\": \"unknown\",\r\n    \"color_ojos\": \"black\",\r\n    \"películas\": [\r\n        \"https://swapi.dev/api/films/6/\"\r\n    ],\r\n    \"género\": \"male\",\r\n    \"color_cabello\": \"none\",\r\n    \"altura\": 206,\r\n    \"planeta_natal\": \"https://swapi.dev/api/planets/12/\",\r\n    \"masa\": 80,\r\n    \"nombre\": \"Tion Medon\",\r\n    \"color_piel\": \"grey\",\r\n    \"creado\": \"2014-12-20T20:35:04.260000Z\",\r\n    \"editado\": \"2014-12-20T21:17:50.498000Z\",\r\n    \"especies\": [\r\n        \"https://swapi.dev/api/species/37/\"\r\n    ],\r\n    \"naves_estelares\": [],\r\n    \"url\": \"https://swapi.dev/api/people/83/\",\r\n    \"vehículos\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/people",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"people"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

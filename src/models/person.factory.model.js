@@ -24,11 +24,6 @@ class PersonFactory {
         const translatedPerson = {};
         const diccionaryOrigin = reverse ? translations[language] : translations.en;
         const diccionaryDestination = reverse ? translations.en : translations[language];
-        /*for (let key in diccionary) {
-            if (person[key] !== undefined) {
-                translatedPerson[diccionary[key]] = person[key];
-            }
-        }*/
 
         for (let i = 0; i < diccionaryOrigin.length; i++) {
             if (person[diccionaryOrigin[i]] !== undefined) {

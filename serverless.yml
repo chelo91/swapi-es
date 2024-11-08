@@ -17,11 +17,11 @@ functions:
           path: /api/people
           method: get
       - httpApi:
-          path: /api/people/{id}
-          method: get
-      - httpApi:
           path: /api/people
           method: post
+      - httpApi:
+          path: /swagger
+          method: get
 
 plugins:
   - serverless-offline
